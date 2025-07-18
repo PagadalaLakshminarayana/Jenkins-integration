@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning the repository...'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                bat 'dir' // If you're on Windows
+            }
+        }
+
+        stage('Success Message') {
+            steps {
+                echo 'Pipeline from Jenkinsfile ran successfully!'
+            }
+        }
+    }
+}
